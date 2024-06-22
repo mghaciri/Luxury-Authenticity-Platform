@@ -85,10 +85,10 @@ const WhiteListRegistration = () => {
   }
 
   return (
-    <section className="flex sm:flex-row flex-col-reverse justify-left items-start pb-20 w-full bg-green-600 pt-20 h-[95vh]">
-      <div className="xl:pl-60 lg:pl-32 px-8">
-        <h2 className="text-white mt-6 xl:text-5xl lg:text-3xl text-2xl font-semibold mb-12 leading-loose">
-          White List Registration (Only for Admin)
+    <section className="flex sm:flex-row flex-col-reverse justify-left items-start w-full bg-green-700 pt-20 h-[30vh]">
+      <div className="xl:pl-60 lg:pl-32">
+        <h2 className="text-white xl:text-5xl lg:text-3xl text-2xl font-semibold mb-6 leading-loose">
+          1. White List Registration (Only for Admin)
         </h2>
 
         <div className="flex">
@@ -117,30 +117,7 @@ const WhiteListRegistration = () => {
           {confirmation && <div>{confirmation}</div>}
         </div>
 
-        <div className="overflow-x-auto relative mt-6">
-          <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-            <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-              <tr>
-                <th
-                  scope="col"
-                  className="py-3 px-6 text-black border-b border-gray-500"
-                >
-                  Voters list
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              {registeredAddresses.map((address, index) => (
-                <tr
-                  key={index}
-                  className="bg-blue-100 text-black border-b border-gray-500 dark:bg-gray-800 dark:border-gray-700"
-                >
-                  <td className="py-4 px-6">{address}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+       
       </div>
     </section>
   );
