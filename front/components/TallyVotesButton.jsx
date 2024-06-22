@@ -5,31 +5,20 @@ import { useWriteContract } from 'wagmi'
 import { useWatchContractEvent } from 'wagmi'
 import { contractAbi, contractAddress } from '@/constants';
 
-const ProposalRegistrationStartButton = () => {
-  const [voterAddress, setVoterAddress] = useState('');
-  const [registeredAddresses, setRegisteredAddresses] = useState([]);
+const tallyVotesButton = () => {
+//  const [registeredAddresses, setRegisteredAddresses] = useState([]);
 
   const { writeContract } = useWriteContract()
 
-  const handleStartSession = () => {
-    console.log("ProposalRegistrationStartButton")
+  const handleTallyVotes = () => {
+    console.log("tallyVotes")
     writeContract({ 
         abi : contractAbi,
         address: contractAddress,
-        functionName: 'startProposalsRegistering'
+        functionName: 'tallyVotes'
         }
     )
 
-/*
-    useWatchContractEvent({
-        address: contractAddress,
-        abi: contractAbi,
-        eventName: 'WorkflowStatusChange',
-        onLogs(logs) {
-          console.log('New Event: ', logs)
-        },
-      })
-*/
   };
 
   return (
@@ -39,10 +28,10 @@ const ProposalRegistrationStartButton = () => {
           style={{ lineHeight: "1.2" }}
           className="text-black mt-6 xl:text-5xl lg:text-3xl text-2xl font-semibold mb-12 leading-loose"
         >
-          Proposal Registration Start
+          Tally Votes Start
         </h2>
         <div className='flex'>
-        <Button color="blue" onClick={handleStartSession}>Start</Button>
+        <Button color="blue" onClick={handleTallyVotes}>Start Talling Votes</Button>
         </div>
         <div></div>
       </div>
@@ -53,4 +42,4 @@ const ProposalRegistrationStartButton = () => {
   );
 };
 
-export default ProposalRegistrationStartButton;
+export default tallyVotesButton;
