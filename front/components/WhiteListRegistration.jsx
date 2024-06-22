@@ -2,48 +2,62 @@
 import { useEffect, useState } from "react";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { Alert, Button } from "flowbite-react";
+import { useToast } from "@chakra-ui/react";
 import { HiInformationCircle } from "react-icons/hi";
-import { useAccount, useReadContract, useWriteContract, useWaitForTransactionReceipt } from "wagmi";
 
+import {
+  useAccount,
+  useReadContract,
+  useWriteContract,
+  useWaitForTransactionReceipt,
+} from "wagmi";
 
-import { contractAddress, contractAbi } from "@/constants";
+import { contractAddress, contractAbi } from "../constants";
 
 const WhiteListRegistration = () => {
   const [voterAddress, setVoterAddress] = useState("");
-  const [confirmation, setConfirmation] = useState(""); 
+  const [confirmation, setConfirmation] = useState("");
   const [registeredAddresses, setRegisteredAddresses] = useState([]);
   const [showAlert, setShowAlert] = useState(false);
+  const toast = useToast();
   const { address } = useAccount();
   const { writeContract } = useWriteContract();
 
   const ownerAddress = "0xfdb8D26D4faB21C3c506A3781583a46aEDc5833d";
 
-
   const addVoter = async () => {
     try {
-      writeContract({
+      await writeContract({
         addressOrName: contractAddress,
         contractInterface: contractAbi,
         functionName: "addVoter",
         args: [voterAddress],
-      });
 
-   
-      if (voterAddress) {
-        // Transaction successful
-        setShowAlert(false);
-        setConfirmation("Voter successfully added to whitelist");
-      } else {
-        // Transaction failed
-        throw new Error("Voter registration failed");
-      }
+        mutation: {
+          onSuccess: () => {
+            toast({
+              title: "Voter successfully added to whitelist",
+              status: "success",
+              duration: 3000,
+              isClosable: true,
+            });
+            setVoterAddress("");
+            setConfirmation("Voter successfully added to whitelist");
+          },
+          onError: (error) => {
+            console.error("Error adding voter:", error);
+            setShowAlert(true);
+            setConfirmation("Error adding voter to whitelist");
+          },
+        },
+      });
     } catch (error) {
       console.error("Error adding voter:", error);
       setShowAlert(true);
       setConfirmation("Error adding voter to whitelist");
     }
   };
-  
+
   const handleRegister = () => {
     console.log(voterAddress);
     addVoter();
@@ -97,11 +111,14 @@ const WhiteListRegistration = () => {
         </div>
         <div className="mt-4 w-80">
           {showAlert && (
-            <Alert color="failure" icon={HiInformationCircle}>
-              <span className="text-sm">Invalid Eth address</span>
+            <Alert
+              className="mt-4"
+              color="danger"
+              icon={<i className="fas fa-exclamation-circle"></i>}
+            >
+              {confirmation}
             </Alert>
           )}
-          {confirmation && <div>{confirmation}</div>}
         </div>
 
         <div className="overflow-x-auto relative mt-6">
@@ -129,6 +146,7 @@ const WhiteListRegistration = () => {
           </table>
         </div>
       </div>
+  
     </section>
   );
 };
