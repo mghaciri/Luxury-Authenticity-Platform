@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 
 pragma solidity 0.8.20;
-import "../node_modules/@openzeppelin/contracts/access/Ownable.sol";
+import "@openzeppelin/contracts/access/Ownable.sol";
 
 /**
  * FLOW description
@@ -58,8 +58,10 @@ contract Voting is Ownable {
     /// @notice Current Workflow status
     WorkflowStatus public workflowStatus;
 
-    /// @notice Proposal tab
+    /// @notice Proposal Array
     Proposal[] proposalsArray;
+
+    /// @notice Mapping of Voter struct
     mapping (address => Voter) voters;
 
 
