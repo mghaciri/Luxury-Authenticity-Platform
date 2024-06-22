@@ -1,5 +1,5 @@
 import Header from "./Header";
-import Footer from "./Footer";
+// import Footer from "./Footer";
 
 const Layout = ({ children }) => {
     return (
@@ -8,7 +8,7 @@ const Layout = ({ children }) => {
             <main className="main">
                 {children}
             </main>
-            <Footer />
+            
         </div>
     )
 }
