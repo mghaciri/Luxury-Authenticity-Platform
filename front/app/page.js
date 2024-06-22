@@ -4,6 +4,7 @@ import WhiteListRegistration from "@/components/WhiteListRegistration";
 import ProposalRegistrationStartButton from "@/components/ProposalRegistrationStartButton";
 import PropososalSubmission from "@/components/ProposalSubmission";
 import VotingStartSessionButton from "@/components/VotingStartSessionButton";
+import Voting from "@/components/Voting";
 import VotingSessionEndButton from "@/components/VotingSessionEndButton";
 
 import ProposalRegistrationEndButton from "@/components/ProposalRegistrationEndButton";
@@ -21,10 +22,9 @@ const App = () => {
       <PropososalSubmission />
       <ProposalRegistrationEndButton />
       <VotingStartSessionButton />
+      <Voting />
       <VotingSessionEndButton />
       <TallyVotesButton />
-      
-      <Home />
     </>
   );
 };

@@ -1,18 +1,15 @@
 "use client";
-import { useEffect, useState } from "react";
-import { ConnectButton } from "@rainbow-me/rainbowkit";
-import { Alert, Button } from "flowbite-react";
-import { HiInformationCircle } from "react-icons/hi";
-import { useAccount, useReadContract, useWriteContract } from "wagmi";
+import { useState } from "react";
+
+import { Button } from "flowbite-react";
+
+import { useWriteContract } from "wagmi";
 
 import { contractAddress, contractAbi } from "@/constants";
 
 const PropososalSubmission = () => {
   const [description, setDescription] = useState("");
   const [confirmation, setConfirmation] = useState("");
-  const [registeredAddresses, setRegisteredAddresses] = useState([]);
-  const [showAlert, setShowAlert] = useState(false);
-  const { address } = useAccount();
   const { writeContract } = useWriteContract();
 
   const addProposal = async () => {
@@ -31,7 +28,7 @@ const PropososalSubmission = () => {
   };
 
   return (
-    <section className="flex sm:flex-row flex-col-reverse justify-left items-start pb-20 w-full bg-green-700 h-[95vh]">
+    <section className="flex sm:flex-row flex-col-reverse justify-left items-start pb-20 w-full bg-green-700 h-[25vh]">
       <div className="xl:pl-60 lg:pl-32 px-8">
         <h2 className="text-white mt-6 xl:text-5xl lg:text-3xl text-2xl font-semibold mb-12 leading-loose">
           3. Proposals submission
