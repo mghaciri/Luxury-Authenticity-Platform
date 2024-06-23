@@ -1,6 +1,8 @@
+'use client';
+
 import React, { useEffect } from "react";
 import { useReadContract } from "wagmi";
-import { Progress } from "flowbite-react";
+import { Progress, Button } from "flowbite-react";
 import { contractAddress, contractAbi } from "../constants";
 
 const statusDescriptions = {
@@ -44,8 +46,10 @@ function GetStatus() {
         size="lg"
         labelProgress
         labelText
+        
 
       />
+      <Button gradientMonochrome="teal" className='text-black ml-6' onClick={() => refetch()}>Rafraîchir...</Button>
     </div>
   );
 }

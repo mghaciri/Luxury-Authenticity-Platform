@@ -7,13 +7,13 @@ import { useWriteContract } from "wagmi";
 
 import { contractAddress, contractAbi } from "@/constants";
 
-import { useStatus } from "@/context/StatusContext";
+
 
 const Voting = () => {
   const [proposalId, setProposalId] = useState("");
   const [confirmation, setConfirmation] = useState("");
   const { writeContract } = useWriteContract();
-  const { setRefetch } = useStatus();
+
 
   const setVote = async (proposalId) => {
     writeContract({
@@ -28,12 +28,7 @@ const Voting = () => {
     console.log(proposalId);
     setVote();
     setConfirmation("You've successfully voted for proposalId");
-    setRefetch((prevRefetch) => {
-      return () => {
-        console.log("Refetching status...");
-        prevRefetch();
-      };
-    });
+    
   };
 
   return (

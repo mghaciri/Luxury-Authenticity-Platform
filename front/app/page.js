@@ -8,8 +8,8 @@ import ProposalRegistrationEndButton from "@/components/ProposalRegistrationEndB
 import VotingStartSessionButton from "@/components/VotingStartSessionButton";
 import Voting from "@/components/Voting";
 import VotingSessionEndButton from "@/components/VotingSessionEndButton";
-
 import TallyVotesButton from "@/components/TallyVotesButton";
+import WinningProposal from "@/components/WinningProposal";
 
 const App = () => {
   return (
@@ -23,6 +23,8 @@ const App = () => {
       <VotingStartSessionButton />
       <Voting />
       <VotingSessionEndButton />
+      <TallyVotesButton />
+      <WinningProposal />
     </>
   );
 };
