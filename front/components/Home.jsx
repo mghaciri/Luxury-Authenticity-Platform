@@ -6,7 +6,7 @@ const Home = () => {
       <section className="flex flex-col justify-around items-center pb-6 w-full bg-[#0a1835] h-[50vh]">
         <div className="flex flex-col md:flex-row justify-center items-center">
           <h2
-            className="text-white mt-6 text-2xl md:text-3xl lg:text-5xl font-semibold leading-loose"
+            className="text-white mt-32 md:mt-0 text-2xl md:text-3xl lg:text-5xl font-semibold leading-loose"
             style={{ lineHeight: "1.2" }}
           >
             Welcome to our Voting Dapp

@@ -33,7 +33,7 @@ function GetStatus() {
   const statusMessage = statusDescriptions[status] || "Unknown Status";
 
   return (
-    <div className="flex flex-col md:flex-row justify-center items-center w-full bg-[#0a1835] md:h-[10vh] pb-10 md:pl-60">
+    <div className="flex flex-col md:flex-row justify-center items-center w-full bg-[#0a1835] md:h-[10vh] pb-10 md:pl-60 pt-40">
       <div className="flex-1 text-white text-base md:text-3xl text-center md:items-center p-2">
         Step {status} : {statusMessage}
       </div>
