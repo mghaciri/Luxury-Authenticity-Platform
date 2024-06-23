@@ -33,25 +33,28 @@ function GetStatus() {
   const statusMessage = statusDescriptions[status] || "Unknown Status";
 
   return (
-    <div className="flex flex-row justify-center items-center w-full bg-[#0a1835] h-[10vh]">
-      <div className="text-white text-3xl text-center items-center mr-12">
-        Statut actuel {status} : {statusMessage}
+    <div className="flex flex-col md:flex-row justify-center items-center w-full bg-[#0a1835] md:h-[10vh] pb-10 md:pl-60">
+      <div className="flex-1 text-white text-base md:text-3xl text-center md:items-center p-2">
+        Step {status} : {statusMessage}
       </div>
-      <Progress
-        color="teal"
-        progress={status * 20}
-        progressLabelPosition="inside"
-        textLabel="Workflow Progress"
-        textLabelPosition="outside"
-        size="lg"
-        labelProgress
-        labelText
-        
-
-      />
-      <Button gradientMonochrome="teal" className='text-white ml-6' onClick={() => refetch()}>Refresh...</Button>
+      <div className="flex-1 p-2">
+        <Progress
+          color="teal"
+          progress={status * 20}
+          progressLabelPosition="inside"
+          textLabel="Workflow Progress"
+          textLabelPosition="outside"
+          size="lg"
+          labelProgress
+          labelText
+        />
+      </div>
+      <div className="flex-1 p-2">
+        <Button gradientMonochrome="teal" className='text-white' onClick={() => refetch()}>Refresh...</Button>
+      </div>
     </div>
   );
+
 }
 
 export default GetStatus;
