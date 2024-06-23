@@ -1,6 +1,6 @@
 "use client";
-import { useEffect } from "react"; // Ensure useEffect is imported
-import { Button } from "flowbite-react"; // Removed unused import 'Card'
+import { useEffect } from "react"; 
+import { Button } from "flowbite-react"; 
 import { useReadContract } from "wagmi";
 import { contractAbi, contractAddress } from "@/constants";
 

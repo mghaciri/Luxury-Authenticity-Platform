@@ -87,7 +87,7 @@ ETHERSCAN_API_KEY=YOUR_ETHERSCAN_API_KEY
 ```
 Deploy
 ```
-yarn hardhat ignition deploy ./ignition/modules/Voting.js --network sepolia --verify
+yarn hardhat run .\\scripts\\deploy.js --network sepolia
 ```
 Verify contract
 ```
