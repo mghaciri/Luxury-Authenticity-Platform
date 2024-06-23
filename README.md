@@ -71,12 +71,12 @@ New TallyVote
 - Result Viewing: Everyone to view the results.
 
 ## LINKS
-- Dapp deployed on: vercel
-- Etherscan contract: https://sepolia.etherscan.io/address/0xbA38596ac0aeaDe493C51186B37F36F7B8E9d854#code
+- Dapp deployed on: [vercel](https://votingdappalyra.vercel.app/)
+- Etherscan contract: https://sepolia.etherscan.io/address/0xb9fbA4007272001BF72366CAb561300c16754758
 
 ## How to deploy your own smart contract on SEPOLIA
 ```
-cd backend
+cd back
 yarn install
 ```
 Set your .env
@@ -89,7 +89,10 @@ Deploy
 ```
 yarn hardhat run .\\scripts\\deploy.js --network sepolia
 ```
-Verify contract
+## FRONTEND
 ```
+cd front
+npm install
+npm run dev
 ```
 

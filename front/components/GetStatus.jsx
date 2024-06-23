@@ -26,7 +26,7 @@ function GetStatus() {
   }, [refetch]);
 
   if (status === undefined) {
-    return <div>Chargement du statut...</div>;
+    return <div className="text-black bg-[#0a1835]">Chargement du statut...</div>;
   }
 
   // Use the statusDescriptions object to get the status message

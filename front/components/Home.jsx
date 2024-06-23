@@ -12,7 +12,7 @@ const Home = () => {
         >
           Welcome on our Voting Dapp
         </h2>
-        <img src="/home2.png" alt="Home" style={{ width: '500px' }} />
+        <img src="/home2.png" alt="Home" style={{ width: '400px' }} />
         </div>
 
       </section>
