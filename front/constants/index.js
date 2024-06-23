@@ -1,5 +1,4 @@
-// 1st deploy export const contractAddress = "0xbA38596ac0aeaDe493C51186B37F36F7B8E9d854";
-export const contractAddress = "0x6Df1964EFFbfFE29389cfED842Bf438f21d84d62";
+export const contractAddress = "0xb9fbA4007272001BF72366CAb561300c16754758";
 export const contractAbi = [
   { inputs: [], stateMutability: "nonpayable", type: "constructor" },
   {
