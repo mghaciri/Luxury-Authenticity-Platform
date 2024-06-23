@@ -15,7 +15,7 @@ const Voting = () => {
   const { writeContract } = useWriteContract();
 
 
-  const setVote = async (proposalId) => {
+  const setVote = async () => {
     writeContract({
       address: contractAddress,
       abi: contractAbi,
@@ -25,7 +25,6 @@ const Voting = () => {
   };
 
   const handleSetVote = () => {
-    console.log(proposalId);
     setVote();
     setConfirmation("You've successfully voted for proposalId");
     
@@ -40,7 +39,7 @@ const Voting = () => {
 
         <div className="flex">
           <input
-            type="text"
+            type="number"
             value={proposalId}
             onChange={(e) => setProposalId(e.target.value)}
             className="input input-bordered input-primary w-full max-w-xs text-black"
