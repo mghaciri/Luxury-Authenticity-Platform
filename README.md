@@ -1,6 +1,11 @@
 # VotingDapp
 - Voting Dapp for Alyra Blockchain School
 - Collaborators: Mohammed GHACIRI and Ty HA
+  
+![Voting Dapp Mobile View](/front/public/votingmobile.png)
+
+
+
 
 # Security vulnerability fixed
 
@@ -95,4 +100,4 @@ cd front
 npm install
 npm run dev
 ```
-
+![Voting Dapp Desktop View](/front/public/desktopvoting.png)
