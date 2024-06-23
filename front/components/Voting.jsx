@@ -16,7 +16,7 @@ const Voting = () => {
 
 
   const setVote = async () => {
-    await writeContract({
+    writeContract({
       address: contractAddress,
       abi: contractAbi,
       functionName: "setVote",
@@ -25,7 +25,6 @@ const Voting = () => {
   };
 
   const handleSetVote = () => {
-    console.log(proposalId);
     setVote();
     setConfirmation("You've successfully voted for proposalId");
     
