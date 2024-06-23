@@ -3,13 +3,15 @@ import { useState } from "react";
 
 import { Button } from "flowbite-react";
 
-import { useWriteContract } from "wagmi";
+import { useWriteContract, useReadContract } from "wagmi";
 
 import { contractAddress, contractAbi } from "@/constants";
 
-const PropososalSubmission = () => {
+const ProposalSubmission = () => {
   const [description, setDescription] = useState("");
   const [confirmation, setConfirmation] = useState("");
+  const [proposal, setProposal] = useState(null);
+  const [loading, setLoading] = useState(true);
   const { writeContract } = useWriteContract();
 
   const addProposal = async () => {
@@ -21,11 +23,39 @@ const PropososalSubmission = () => {
     });
   };
 
+  const getOneProposal = async (proposalId) => {
+    const { data, refetch } = useReadContract({
+      address: contractAddress,
+      abi: contractAbi,
+      functionName: "getOneProposal",
+      args: [proposalId],
+    });
+    useEffect(() => {
+      refetch();
+    }, [refetch]);
+  
+
+    useEffect(() => {
+      const fetchProposal = async () => {
+        await refetch();
+        if (data) {
+          setProposal(data);
+          setLoading(false);
+        }
+      };
+  
+      fetchProposal();
+    }, [refetch, data]);
+
+    return { proposal, loading };
+  };
+
   const handleAddProposal = () => {
     console.log(description);
     addProposal();
     setConfirmation("Proposal successfully added");
   };
+  
 
   return (
     <section className="flex sm:flex-row flex-col-reverse justify-left items-start pb-20 w-full bg-green-700 h-[25vh]">
@@ -53,10 +83,18 @@ const PropososalSubmission = () => {
         </div>
         <div className="mt-4 w-80">
           {confirmation && <div>{confirmation}</div>}
+          {/* Display the proposal if not loading and proposal is not null */}
+          {!loading && proposal && (
+            <div>
+              <h3>Proposal Details</h3>
+              {/* Display proposal details here */}
+              <p>{proposal}</p>
+            </div>
+          )}
         </div>
       </div>
     </section>
   );
 };
 
-export default PropososalSubmission;
+export default ProposalSubmission;

@@ -85,7 +85,7 @@ const WhiteListRegistration = () => {
   }
 
   return (
-    <section className="flex sm:flex-row flex-col-reverse justify-left items-start w-full bg-green-700 pt-20 h-[30vh]">
+    <section className="flex justify-left items-start w-full bg-green-700 pt-20 h-[30vh]">
       <div className="xl:pl-60 lg:pl-32">
         <h2 className="text-white xl:text-5xl lg:text-3xl text-2xl font-semibold mb-6 leading-loose">
           1. White List Registration (Only for Admin)

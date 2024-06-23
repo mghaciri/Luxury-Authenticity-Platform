@@ -4,10 +4,12 @@ import { Card, Button } from "flowbite-react";
 import { useWriteContract } from "wagmi";
 import { useWatchContractEvent } from "wagmi";
 import { contractAbi, contractAddress } from "@/constants";
+import { useStatus } from "@/context/StatusContext";
 
 const ProposalRegistrationStartButton = () => {
   const [voterAddress, setVoterAddress] = useState("");
   const [registeredAddresses, setRegisteredAddresses] = useState([]);
+  const { setRefetch } = useStatus();
 
   const { writeContract } = useWriteContract();
 
@@ -18,17 +20,14 @@ const ProposalRegistrationStartButton = () => {
       address: contractAddress,
       functionName: "startProposalsRegistering",
     });
+     // After the write operation, set a new refetch function to trigger a refetch in GetStatus
+     setRefetch((prevRefetch) => {
+      return () => {
+        console.log("Refetching status...");
+        prevRefetch();
+      };
+    });
 
-    /*
-    useWatchContractEvent({
-        address: contractAddress,
-        abi: contractAbi,
-        eventName: 'WorkflowStatusChange',
-        onLogs(logs) {
-          console.log('New Event: ', logs)
-        },
-      })
-*/
   };
 
   return (

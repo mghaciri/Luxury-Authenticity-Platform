@@ -4,11 +4,13 @@ import { Card, Button } from "flowbite-react";
 import { useWriteContract } from "wagmi";
 import { useWatchContractEvent } from "wagmi";
 import { contractAbi, contractAddress } from "@/constants";
+import { useStatus } from "@/context/StatusContext";
 
 const VotingSessionEndButton = () => {
   //  const [registeredAddresses, setRegisteredAddresses] = useState([]);
 
   const { writeContract } = useWriteContract();
+  const { setRefetch } = useStatus();
 
   const handleEndVoting = () => {
     console.log("endVotingSession");
@@ -16,6 +18,12 @@ const VotingSessionEndButton = () => {
       abi: contractAbi,
       address: contractAddress,
       functionName: "endVotingSession",
+    });
+    setRefetch((prevRefetch) => {
+      return () => {
+        console.log("Refetching status...");
+        prevRefetch();
+      };
     });
   };
 

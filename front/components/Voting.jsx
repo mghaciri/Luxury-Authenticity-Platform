@@ -7,10 +7,13 @@ import { useWriteContract } from "wagmi";
 
 import { contractAddress, contractAbi } from "@/constants";
 
+import { useStatus } from "@/context/StatusContext";
+
 const Voting = () => {
   const [proposalId, setProposalId] = useState("");
   const [confirmation, setConfirmation] = useState("");
   const { writeContract } = useWriteContract();
+  const { setRefetch } = useStatus();
 
   const setVote = async (proposalId) => {
     writeContract({
@@ -23,8 +26,14 @@ const Voting = () => {
 
   const handleSetVote = () => {
     console.log(proposalId);
-    addProposal();
+    setVote();
     setConfirmation("You've successfully voted for proposalId");
+    setRefetch((prevRefetch) => {
+      return () => {
+        console.log("Refetching status...");
+        prevRefetch();
+      };
+    });
   };
 
   return (
@@ -38,7 +47,7 @@ const Voting = () => {
           <input
             type="text"
             value={proposalId}
-            onChange={(e) => setDescription(e.target.value)}
+            onChange={(e) => setProposalId(e.target.value)}
             className="input input-bordered input-primary w-full max-w-xs text-black"
             placeholder="Enter your proposalID choice"
           />

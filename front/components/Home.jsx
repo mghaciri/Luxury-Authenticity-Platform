@@ -1,16 +1,21 @@
 "use client";
 
+
 const Home = () => {
   return (
     <>
-      <div className="flex sm:flex-row flex-col-reverse justify-around items-center pb-6 w-full bg-green-500">
+      <section className="flex flex-col justify-around items-center pb-6 w-full bg-[#0a1835] h-[50vh]">
+        <div className="flex flex-row justify-center items-center">
         <h2
           style={{ lineHeight: "1.2" }}
           className="text-white mt-6 xl:text-5xl lg:text-3xl text-2xl font-semibold leading-loose"
         >
           Welcome on our Voting Dapp
         </h2>
-      </div>
+        <img src="/home2.png" alt="Home" style={{ width: '500px' }} />
+        </div>
+
+      </section>
     </>
   );
 };
