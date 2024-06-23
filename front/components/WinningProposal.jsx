@@ -29,7 +29,7 @@ function WinningProposal() {
       <h2 className="text-white xl:text-5xl lg:text-3xl text-2xl font-semibold leading-loose text-center mb-6">
         3. Winning Proposal
       </h2>
-      <p className='text-black'>Winning Proposal : {(winningProposalID ?? 'Loading...').toString()}</p>
+      
       <Button gradientMonochrome="purple" onClick={handleRefetch}>
         Show Winning Proposal
       </Button>
