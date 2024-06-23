@@ -12,20 +12,7 @@ const GetVoterInfo = () => {
   const [userRights, setUserRights] = useState('loading');
   const { address } = useAccount();
 
-  // Fetch workflow status
-  const { data: getWorkflowStatus, refetch: refetchWorkflowStatus } = useReadContract({
-    address: contractAddress,
-    abi: contractAbi,
-    functionName: 'workflowStatus',
-    watch: true,
-  });
 
-  // Fetch owner data
-  const { data: isOwnerData } = useReadContract({
-    address: contractAddress,
-    abi: contractAbi,
-    functionName: 'owner',
-  });
 
   // Fetch voter information
   const { data: voterData, isLoading } = useReadContract({
@@ -62,7 +49,7 @@ const GetVoterInfo = () => {
 
   if (!voterInfo.isRegistered) {
     return (
-      <div className="flex flex-col justify-center items-center pb-20 w-full bg-green-300 h-[25vh]">
+      <div className="flex flex-col justify-center items-center pb-20 w-full bg-blue-300 h-[25vh]">
         <p className="text-white mt-6 xl:text-5xl lg:text-3xl text-2xl font-semibold mb-12 leading-loose">
           You are not registered as a voter.
         </p>
@@ -71,7 +58,7 @@ const GetVoterInfo = () => {
   }
 
   return (
-    <section className="flex sm:flex-row flex-col-reverse justify-left items-start pb-20 w-full bg-green-700 h-[25vh]">
+    <section className="flex sm:flex-row flex-col-reverse justify-left items-start pb-20 w-full bg-blue-950 h-[25vh]">
       {showAlert && <Alert>{confirmation}</Alert>}
       <div>
         <h2 className="text-white mt-6 xl:text-5xl lg:text-3xl text-2xl font-semibold mb-12 leading-loose">Voter Information</h2>

@@ -28,7 +28,7 @@ const VotingSessionEndButton = () => {
   };
 
   return (
-    <section className="flex flex-col justify-center items-center w-full bg-green-700 pt-6 pb-6">
+    <section className="flex flex-col justify-center items-center w-full bg-blue-950 pt-6 pb-6">
       <h2 className="text-white xl:text-5xl lg:text-3xl text-2xl font-semibold leading-loose text-center mb-6">
         7. Session Vote End
       </h2>

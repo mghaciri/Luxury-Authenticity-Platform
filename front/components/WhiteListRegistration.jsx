@@ -68,7 +68,7 @@ const WhiteListRegistration = () => {
   if (!isOwner) {
     return (
       <>
-        <div className="flex flex-col text-orange-700 h-80 text-center items-center">
+        <div className="flex flex-col text-orange-700 h-80 text-center items-center bg-blue-950">
           <h2 className="text-orange-700 text-center text-4xl mt-10">
             You do not have permission to access to White List Registration.
           </h2>
@@ -85,7 +85,7 @@ const WhiteListRegistration = () => {
   }
 
   return (
-    <section className="flex justify-left items-start w-full bg-green-700 pt-20 h-[30vh]">
+    <section className="flex justify-left items-start w-full bg-blue-950 pt-20 h-[30vh]">
       <div className="xl:pl-60 lg:pl-32">
         <h2 className="text-white xl:text-5xl lg:text-3xl text-2xl font-semibold mb-6 leading-loose">
           1. White List Registration (Only for Admin)

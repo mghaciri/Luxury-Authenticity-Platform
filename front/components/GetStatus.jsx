@@ -49,7 +49,7 @@ function GetStatus() {
         
 
       />
-      <Button gradientMonochrome="teal" className='text-black ml-6' onClick={() => refetch()}>Rafraîchir...</Button>
+      <Button gradientMonochrome="teal" className='text-white ml-6' onClick={() => refetch()}>Update...</Button>
     </div>
   );
 }

@@ -15,8 +15,8 @@ const Voting = () => {
   const { writeContract } = useWriteContract();
 
 
-  const setVote = async (proposalId) => {
-    writeContract({
+  const setVote = async () => {
+    await writeContract({
       address: contractAddress,
       abi: contractAbi,
       functionName: "setVote",
@@ -32,15 +32,15 @@ const Voting = () => {
   };
 
   return (
-    <section className="flex sm:flex-row flex-col-reverse justify-left items-start pb-20 w-full bg-green-600 h-[25vh]">
-      <div className="xl:pl-60 lg:pl-32 px-8">
+    <section className="flex sm:flex-row flex-col-reverse justify-center items-start pb-10 w-full bg-blue-900 h-[20vh]">
+      <div className="px-8">
         <h2 className="text-white mt-6 xl:text-5xl lg:text-3xl text-2xl font-semibold mb-12 leading-loose">
           6. Voting - Select a proposalId
         </h2>
 
         <div className="flex">
           <input
-            type="text"
+            type="number"
             value={proposalId}
             onChange={(e) => setProposalId(e.target.value)}
             className="input input-bordered input-primary w-full max-w-xs text-black"

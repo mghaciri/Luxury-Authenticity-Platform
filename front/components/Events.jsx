@@ -21,7 +21,7 @@ const Events = () => {
 
   return (
     <>
-      <div className="flex justify-center items-center p-8 bg-green-700">
+      <div className="flex justify-center items-center p-8 bg-blue-950">
         <h2 className="text-2xl font-bold mt-4">Events</h2>
         <GetStatus />
         <div>{getStatusDescription(status)}</div>

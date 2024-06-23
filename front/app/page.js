@@ -10,6 +10,7 @@ import Voting from "@/components/Voting";
 import VotingSessionEndButton from "@/components/VotingSessionEndButton";
 import TallyVotesButton from "@/components/TallyVotesButton";
 import WinningProposal from "@/components/WinningProposal";
+import Footer from "@/components/Footer";
 
 const App = () => {
   return (
@@ -25,6 +26,7 @@ const App = () => {
       <VotingSessionEndButton />
       <TallyVotesButton />
       <WinningProposal />
+      <Footer />
     </>
   );
 };

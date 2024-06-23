@@ -58,8 +58,8 @@ const ProposalSubmission = () => {
   
 
   return (
-    <section className="flex sm:flex-row flex-col-reverse justify-left items-start pb-20 w-full bg-green-700 h-[25vh]">
-      <div className="xl:pl-60 lg:pl-32 px-8">
+    <section className="flex sm:flex-row flex-col-reverse justify-center items-start pb-12 w-full bg-blue-950 h-[20vh]">
+      <div className="px-8">
         <h2 className="text-white mt-6 xl:text-5xl lg:text-3xl text-2xl font-semibold mb-12 leading-loose">
           3. Proposals submission
         </h2>
