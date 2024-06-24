@@ -102,7 +102,7 @@ npm run dev
 ```
 
 # DEMO video link
-https://www.loom.com/embed/1a6b452b05ef4118a3c9a17fd9ec4098?sid=75e10dd3-a79b-4418-9495-552f0878a165
+https://www.loom.com/share/1a6b452b05ef4118a3c9a17fd9ec4098?sid=9986b160-201d-456f-960d-22cdc5c2d0de
 
 
 ![Voting Dapp Desktop View](/front/public/desktopvoting.png)
