@@ -100,4 +100,9 @@ cd front
 npm install
 npm run dev
 ```
+
+# DEMO video link
+https://www.loom.com/embed/1a6b452b05ef4118a3c9a17fd9ec4098?sid=75e10dd3-a79b-4418-9495-552f0878a165
+
+
 ![Voting Dapp Desktop View](/front/public/desktopvoting.png)
