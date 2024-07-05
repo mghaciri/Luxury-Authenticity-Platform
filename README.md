@@ -1,8 +1,7 @@
-# VotingDapp
-- Voting Dapp for Alyra Blockchain School
-- Collaborators: Mohammed GHACIRI and Ty HA
+# Luxury Authenticity Dapp
+- Luxury Authenticity Platform for Alyra Blockchain School
   
-![Voting Dapp Mobile View](/front/public/votingmobile.png)
+![Luxury Authenticity Platform Mobile View](/front/public/votingmobile.png)
 
 
 
@@ -65,19 +64,11 @@ New TallyVote
 
 ## TO IMPLEMENT
 
-- Voter Whitelist Registration
-- Proposal Registration Session Start
-- Proposal Submission
-- Proposal Registration Session End
-- Voting Session Start
-- Voting
-- Voting Session End
-- Vote Tallying
-- Result Viewing: Everyone to view the results.
+
 
 ## LINKS
-- Dapp deployed on: [vercel](https://votingdappalyra.vercel.app/)
-- Etherscan contract: https://sepolia.etherscan.io/address/0xb9fbA4007272001BF72366CAb561300c16754758
+- Dapp deployed on: [vercel](https://luxury-authenticity-platform.vercel.app//)
+- Etherscan contract: https://sepolia.etherscan.io/address/XXXXXXXXXXX
 
 ## How to deploy your own smart contract on SEPOLIA
 ```
@@ -92,7 +83,7 @@ ETHERSCAN_API_KEY=YOUR_ETHERSCAN_API_KEY
 ```
 Deploy
 ```
-yarn hardhat run .\\scripts\\deploy.js --network sepolia
+yarn hardhat run ./scripts/deploy.js --network sepolia
 ```
 ## FRONTEND
 ```
@@ -102,7 +93,6 @@ npm run dev
 ```
 
 # DEMO video link
-https://www.loom.com/share/1a6b452b05ef4118a3c9a17fd9ec4098?sid=9986b160-201d-456f-960d-22cdc5c2d0de
 
 
-![Voting Dapp Desktop View](/front/public/desktopvoting.png)
+![Luxury Authenticity Platform Desktop View](/front/public/desktopvoting.png)

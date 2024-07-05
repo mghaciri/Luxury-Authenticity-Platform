@@ -7,8 +7,8 @@ import "./globals.css";
 const roboto = Roboto({ subsets: ["latin"], weight: "400" });
 
 export const metadata = {
-  title: "Voting DApp",
-  description: "Voting Dapp for Alyra Blockchain Course",
+  title: "Luxury Authenticity Platform",
+  description: "Luxury Authenticity Platform for Alyra Blockchain Course",
 };
 
 export default function RootLayout({ children }) {

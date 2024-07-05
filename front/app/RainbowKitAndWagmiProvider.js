@@ -13,7 +13,7 @@ import {
 } from "@tanstack/react-query";
 
 const config = getDefaultConfig({
-    appName: 'Voting Dapp',
+    appName: 'Luxury Authenticity Platform',
     // walletConnect projetId
     projectId: '2369a2d606efd133dba6314678b831c8',
     chains: [sepolia],

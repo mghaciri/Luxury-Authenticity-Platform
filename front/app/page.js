@@ -20,11 +20,9 @@ const App = () => {
       <WhiteListRegistration />
       <ProposalRegistrationStartButton />
       <ProposalSubmission />
-      <ProposalRegistrationEndButton />
-      <VotingStartSessionButton />
+
       <Voting />
-      <VotingSessionEndButton />
-      <TallyVotesButton />
+   
       <WinningProposal />
       <Footer />
     </>
