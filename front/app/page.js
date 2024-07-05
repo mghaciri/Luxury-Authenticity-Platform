@@ -16,14 +16,8 @@ const App = () => {
   return (
     <>
       <Home />
-      <GetStatus />
       <WhiteListRegistration />
-      <ProposalRegistrationStartButton />
-      <ProposalSubmission />
 
-      <Voting />
-   
-      <WinningProposal />
       <Footer />
     </>
   );

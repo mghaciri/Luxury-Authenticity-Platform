@@ -32,30 +32,19 @@ const WhiteListRegistration = () => {
       if (voterAddress) {
         // Transaction successful
         setShowAlert(false);
-        setConfirmation("Voter successfully added to whitelist");
+        setConfirmation("Address successfully added to whitelist");
       } else {
         // Transaction failed
-        throw new Error("Voter registration failed");
+        throw new Error("Address registration failed");
       }
     } catch (error) {
-      console.error("Error adding voter:", error);
+      console.error("Error adding Address:", error);
       setShowAlert(true);
-      setConfirmation("Error adding voter to whitelist");
+      setConfirmation("Error adding Address to whitelist");
     }
   };
   
-/*
-  const addVoter = async () => {
-  
-      writeContract({
-        address: contractAddress,
-        abi: contractAbi,
-        functionName: "addVoter",
-        args: [voterAddress],
-      });
-      
-  };
-  */
+
   
   const handleRegister = () => {
     console.log(voterAddress);
@@ -70,13 +59,12 @@ const WhiteListRegistration = () => {
       <>
         <div className="flex flex-col text-orange-700 h-80 text-center items-center bg-blue-950">
           <h2 className="text-orange-700 text-center text-4xl mt-10">
-            You do not have permission to access to White List Registration.
+
           </h2>
           <p className="text-orange-700 text-center text-2xl mt-4 mb-6">
-            Please connect as Admin
           </p>
           <ConnectButton
-            label="Connect as Admin"
+            label="Admin"
             className="text-center mt-4"
           />
         </div>
@@ -88,7 +76,7 @@ const WhiteListRegistration = () => {
     <section className="flex justify-center items-center w-full bg-blue-950 h-[20vh]">
       <div className="">
         <h2 className="text-white xl:text-5xl lg:text-3xl text-2xl font-semibold mb-6 leading-loose">
-          1. White List Registration (Only for Admin)
+        (Only for Admin)
         </h2>
 
         <div className="flex">
@@ -97,7 +85,7 @@ const WhiteListRegistration = () => {
             value={voterAddress}
             onChange={(e) => setVoterAddress(e.target.value)}
             className="input input-bordered input-primary w-full max-w-xs text-black"
-            placeholder="Enter Voter Address"
+            placeholder="Enter an Address"
           />
 
           <Button
@@ -105,7 +93,7 @@ const WhiteListRegistration = () => {
             onClick={handleRegister}
             className="ml-4"
           >
-            Add a voter to whitelist
+            Add an address to whitelist
           </Button>
         </div>
         <div className="mt-4 w-80">
