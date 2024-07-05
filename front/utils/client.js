@@ -1,5 +1,5 @@
 import { createPublicClient, http } from "viem";
-import {  sepolia } from 'viem/chains';
+import { hardhat, sepolia } from 'viem/chains';
 
 const RPC = process.env.NEXT_PUBLIC_ALCHEMY_RPC || "";
 

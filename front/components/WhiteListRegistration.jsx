@@ -16,7 +16,7 @@ const WhiteListRegistration = () => {
   const { address } = useAccount();
   const { writeContract } = useWriteContract();
 
-  const ownerAddress = "0xfdb8D26D4faB21C3c506A3781583a46aEDc5833d";
+  const ownerAddress = "0xd038D8716C28A0598D14F74d14b15113Aa492adF";
 
 
   const addVoter = async () => {

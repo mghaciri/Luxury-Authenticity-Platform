@@ -1,11 +1,16 @@
-export const contractAddress = "0xb9fbA4007272001BF72366CAb561300c16754758";
+//Sepolia
+export const contractAddress = "0x21374a475C0f9639F2A05707102Fc2cfCfC810B8";
+
+// Hardhat
+//export const contractAddress = "0x5FbDB2315678afecb367f032d93F642f64180aa3";
+
 export const contractAbi = [
   { inputs: [], stateMutability: "nonpayable", type: "constructor" },
   {
     inputs: [{ internalType: "address", name: "owner", type: "address" }],
     name: "OwnableInvalidOwner",
     type: "error",
-  },
+  },  
   {
     inputs: [{ internalType: "address", name: "account", type: "address" }],
     name: "OwnableUnauthorizedAccount",

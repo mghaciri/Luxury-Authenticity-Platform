@@ -15,7 +15,7 @@ import {
 const config = getDefaultConfig({
     appName: 'Voting Dapp',
     // walletConnect projetId
-    projectId: '5a04db586b85aea93b8298876e4213f5',
+    projectId: 'b0135339ab6beb64aa1d024122b31de3',
     chains: [sepolia],
     ssr: true, // If your dApp uses server side rendering (SSR)
 
