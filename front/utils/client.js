@@ -1,9 +1,7 @@
-import { createPublicClient, http } from "viem";
-import { hardhat, sepolia } from 'viem/chains';
-
-const RPC = process.env.NEXT_PUBLIC_ALCHEMY_RPC || "";
-
-export const publicClient = createPublicClient({
-    chain: sepolia,
-    transport: http(RPC),
+import { createPublicClient, http } from 'viem'
+import { hardhat, mainnet } from 'viem/chains'
+ 
+const publicClient = createPublicClient({ 
+  chain: mainnet,
+  transport: http()
 })

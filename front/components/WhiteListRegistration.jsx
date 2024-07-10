@@ -16,7 +16,10 @@ const WhiteListRegistration = () => {
   const { address } = useAccount();
   const { writeContract } = useWriteContract();
 
-  const ownerAddress = "0xd038D8716C28A0598D14F74d14b15113Aa492adF";
+  // MetaMask
+  //const ownerAddress = "0xd038D8716C28A0598D14F74d14b15113Aa492adF";
+  // Hardhat
+  const ownerAddress = "0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266";
 
 
   const addVoter = async () => {
