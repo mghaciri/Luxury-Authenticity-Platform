@@ -1,0 +1,39 @@
+{
+    "description": "Montre Homme Day-Date CADISEN",
+    "image": "QmRqb9S6pF451faR8atzwFg6XtUbYgnepkpQwbVaQ77eVt", 
+    "name": "Day-Date CADISEN",
+    "attributes": [
+        {
+            "trait_type": "birthyear", 
+            "value": "2015"
+        }, 
+        {
+            "trait_type": "brand", 
+            "value": "CADISEN"
+        }, 
+        {
+            "trait_type": "model", 
+            "value": "Day-Date"
+        }, 
+        {
+            "trait_type": "SerialNum", 
+            "value": "5347563719N3421"
+        }, 
+        {
+            "trait_type": "weight", 
+            "value": 95
+        }, 
+        {
+            "trait_type": "diameter", 
+            "value": 30
+        }, 
+        {
+            "trait_type": "material", 
+            "value": "iron"
+        }, 
+        {
+            "trait_type": "genre", 
+            "value": "Men"
+        }
+     ]
+}
