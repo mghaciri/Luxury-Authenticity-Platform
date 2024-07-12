@@ -1,0 +1,39 @@
+{
+    "description": "Montre Homme Rolex Oyster Perpetual",
+    "image": "QmbVYbjnew5YJK1wtngPizvEswcJJ3uJYRKhciwRtfV7kW", 
+    "name": "Rolex Oyster Perpetual",
+    "attributes": [
+        {
+            "trait_type": "birthyear", 
+            "value": "2022"
+        }, 
+        {
+            "trait_type": "brand", 
+            "value": "Rolex"
+        }, 
+        {
+            "trait_type": "model", 
+            "value": "Oyster Perpetual"
+        }, 
+        {
+            "trait_type": "SerialNum", 
+            "value": "277200"
+        }, 
+        {
+            "trait_type": "weight", 
+            "value": 95
+        }, 
+        {
+            "trait_type": "diameter", 
+            "value": 31
+        }, 
+        {
+            "trait_type": "material", 
+            "value": "iron"
+        }, 
+        {
+            "trait_type": "genre", 
+            "value": "Men"
+        }
+     ]
+}

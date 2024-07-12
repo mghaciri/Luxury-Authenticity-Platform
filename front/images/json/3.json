@@ -1,0 +1,39 @@
+{
+    "description": "Montre Femme Philipp Plein Pleine couture",
+    "image": "QmNqTayZ9AkEZc7zNaHh4gA9DaUGvTcQBcB2gjq6uo7BgM", 
+    "name": "Philipp Plein Pleine couture",
+    "attributes": [
+        {
+            "trait_type": "birthyear", 
+            "value": "2021"
+        }, 
+        {
+            "trait_type": "brand", 
+            "value": "Philipp Plein"
+        }, 
+        {
+            "trait_type": "model", 
+            "value": "Pleine couture"
+        }, 
+        {
+            "trait_type": "SerialNum", 
+            "value": "PWEAA0621"
+        }, 
+        {
+            "trait_type": "weight", 
+            "value": 95
+        }, 
+        {
+            "trait_type": "diameter", 
+            "value": 32
+        }, 
+        {
+            "trait_type": "material", 
+            "value": "stainless steel"
+        }, 
+        {
+            "trait_type": "genre", 
+            "value": "Women"
+        }
+     ]
+}

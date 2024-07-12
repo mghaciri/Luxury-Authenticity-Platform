@@ -9,15 +9,16 @@ function TokenURI() {
   const { data } = useReadContract({
     address: contractAddress,
     abi: contractAbi,
-    functionName: 'baseURI',
-//    args: [1],
+    functionName: 'tokenURI',
+    args: [2],
   });
 
   return (
-    <div className="text-white xl:text-5xl lg:text-3xl text-2xl font-semibold leading-loose text-center mb-6">      
+    <div className="flex flex-col justify-around items-center pb-6 w-full bg-[#0a1835] ">    
       <div className='flex flex-col items-center'>
-          <span className='text-2xl font-bold'>Proposition gagnante</span>
-          <span className='text-2xl font-bold'>ID: {data?.toString()}</span>
+          <span className='text-2xl font-bold'>Token URI</span>
+          <span className='text-2xl font-bold'>[ {data?.toString()} ]</span>
+          <img src={data?.toString()} />
       </div>
     </div>
 

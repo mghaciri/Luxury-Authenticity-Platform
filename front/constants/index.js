@@ -1,290 +1,112 @@
-//Sepolia : 
-//export const contractAddress = "0x21374a475C0f9639F2A05707102Fc2cfCfC810B8";
-//export const contractAddress = "0xb9fbA4007272001BF72366CAb561300c16754758"; 
-
-
-// Hardhat
-//export const contractAddress = "0x5FbDB2315678afecb367f032d93F642f64180aa3";
-
-/*
-export const contractAbi = [
-  { inputs: [], stateMutability: "nonpayable", type: "constructor" },
-  {
-    inputs: [{ internalType: "address", name: "owner", type: "address" }],
-    name: "OwnableInvalidOwner",
-    type: "error",
-  },  
-  {
-    inputs: [{ internalType: "address", name: "account", type: "address" }],
-    name: "OwnableUnauthorizedAccount",
-    type: "error",
-  },
-  {
-    anonymous: false,
-    inputs: [
-      {
-        indexed: true,
-        internalType: "address",
-        name: "previousOwner",
-        type: "address",
-      },
-      {
-        indexed: true,
-        internalType: "address",
-        name: "newOwner",
-        type: "address",
-      },
-    ],
-    name: "OwnershipTransferred",
-    type: "event",
-  },
-  {
-    anonymous: false,
-    inputs: [
-      {
-        indexed: false,
-        internalType: "uint256",
-        name: "proposalId",
-        type: "uint256",
-      },
-    ],
-    name: "ProposalRegistered",
-    type: "event",
-  },
-  {
-    anonymous: false,
-    inputs: [
-      {
-        indexed: false,
-        internalType: "address",
-        name: "voter",
-        type: "address",
-      },
-      {
-        indexed: false,
-        internalType: "uint256",
-        name: "proposalId",
-        type: "uint256",
-      },
-    ],
-    name: "Voted",
-    type: "event",
-  },
-  {
-    anonymous: false,
-    inputs: [
-      {
-        indexed: false,
-        internalType: "address",
-        name: "voterAddress",
-        type: "address",
-      },
-    ],
-    name: "VoterRegistered",
-    type: "event",
-  },
-  {
-    anonymous: false,
-    inputs: [
-      {
-        indexed: false,
-        internalType: "enum Voting.WorkflowStatus",
-        name: "previousStatus",
-        type: "uint8",
-      },
-      {
-        indexed: false,
-        internalType: "enum Voting.WorkflowStatus",
-        name: "newStatus",
-        type: "uint8",
-      },
-    ],
-    name: "WorkflowStatusChange",
-    type: "event",
-  },
-  {
-    inputs: [{ internalType: "string", name: "_desc", type: "string" }],
-    name: "addProposal",
-    outputs: [],
-    stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
-    inputs: [{ internalType: "address", name: "_addr", type: "address" }],
-    name: "addVoter",
-    outputs: [],
-    stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
-    inputs: [],
-    name: "endProposalsRegistering",
-    outputs: [],
-    stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
-    inputs: [],
-    name: "endVotingSession",
-    outputs: [],
-    stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
-    inputs: [{ internalType: "uint256", name: "_id", type: "uint256" }],
-    name: "getOneProposal",
-    outputs: [
-      {
-        components: [
-          { internalType: "string", name: "description", type: "string" },
-          { internalType: "uint256", name: "voteCount", type: "uint256" },
-        ],
-        internalType: "struct Voting.Proposal",
-        name: "",
-        type: "tuple",
-      },
-    ],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [{ internalType: "address", name: "_addr", type: "address" }],
-    name: "getVoter",
-    outputs: [
-      {
-        components: [
-          { internalType: "bool", name: "isRegistered", type: "bool" },
-          { internalType: "bool", name: "hasVoted", type: "bool" },
-          { internalType: "uint256", name: "votedProposalId", type: "uint256" },
-        ],
-        internalType: "struct Voting.Voter",
-        name: "",
-        type: "tuple",
-      },
-    ],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [],
-    name: "owner",
-    outputs: [{ internalType: "address", name: "", type: "address" }],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [],
-    name: "renounceOwnership",
-    outputs: [],
-    stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
-    inputs: [{ internalType: "uint256", name: "_id", type: "uint256" }],
-    name: "setVote",
-    outputs: [],
-    stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
-    inputs: [],
-    name: "startProposalsRegistering",
-    outputs: [],
-    stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
-    inputs: [],
-    name: "startVotingSession",
-    outputs: [],
-    stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
-    inputs: [],
-    name: "tallyVotes",
-    outputs: [],
-    stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
-    inputs: [{ internalType: "address", name: "newOwner", type: "address" }],
-    name: "transferOwnership",
-    outputs: [],
-    stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
-    inputs: [],
-    name: "winningProposalID",
-    outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [],
-    name: "workflowStatus",
-    outputs: [
-      { internalType: "enum Voting.WorkflowStatus", name: "", type: "uint8" },
-    ],
-    stateMutability: "view",
-    type: "function",
-  },
-];
-*/
-
-// Contrat NFT.sol sur Sepolia
-//export const contractAddress = "0x4fcCD78237968e5F8E9b61acd4D26971e1FD03dd";  // NFT Bonhomme
-
-
-// Contrat NFT.sol sur Hardhat
-export const contractAddress = "0x5FbDB2315678afecb367f032d93F642f64180aa3";  // NFT
+export const contractAddress = "0x5645B38D17433474c6311348F8561429c2377993"; 
 
 export const contractAbi = [
   {
-    "inputs": [
-      {
-        "internalType": "string",
-        "name": "_baseURI",
-        "type": "string"
-      }
-    ],
+    "inputs": [],
     "stateMutability": "nonpayable",
     "type": "constructor"
   },
   {
-    "inputs": [],
-    "name": "ApprovalCallerNotOwnerNorApproved",
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "sender",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "tokenId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "address",
+        "name": "owner",
+        "type": "address"
+      }
+    ],
+    "name": "ERC721IncorrectOwner",
     "type": "error"
   },
   {
-    "inputs": [],
-    "name": "ApprovalQueryForNonexistentToken",
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "operator",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "tokenId",
+        "type": "uint256"
+      }
+    ],
+    "name": "ERC721InsufficientApproval",
     "type": "error"
   },
   {
-    "inputs": [],
-    "name": "BalanceQueryForZeroAddress",
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "approver",
+        "type": "address"
+      }
+    ],
+    "name": "ERC721InvalidApprover",
     "type": "error"
   },
   {
-    "inputs": [],
-    "name": "MintERC2309QuantityExceedsLimit",
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "operator",
+        "type": "address"
+      }
+    ],
+    "name": "ERC721InvalidOperator",
     "type": "error"
   },
   {
-    "inputs": [],
-    "name": "MintToZeroAddress",
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "owner",
+        "type": "address"
+      }
+    ],
+    "name": "ERC721InvalidOwner",
     "type": "error"
   },
   {
-    "inputs": [],
-    "name": "MintZeroQuantity",
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "receiver",
+        "type": "address"
+      }
+    ],
+    "name": "ERC721InvalidReceiver",
     "type": "error"
   },
   {
-    "inputs": [],
-    "name": "NotCompatibleWithSpotMints",
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "sender",
+        "type": "address"
+      }
+    ],
+    "name": "ERC721InvalidSender",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "tokenId",
+        "type": "uint256"
+      }
+    ],
+    "name": "ERC721NonexistentToken",
     "type": "error"
   },
   {
@@ -307,61 +129,6 @@ export const contractAbi = [
       }
     ],
     "name": "OwnableUnauthorizedAccount",
-    "type": "error"
-  },
-  {
-    "inputs": [],
-    "name": "OwnerQueryForNonexistentToken",
-    "type": "error"
-  },
-  {
-    "inputs": [],
-    "name": "OwnershipNotInitializedForExtraData",
-    "type": "error"
-  },
-  {
-    "inputs": [],
-    "name": "SequentialMintExceedsLimit",
-    "type": "error"
-  },
-  {
-    "inputs": [],
-    "name": "SequentialUpToTooSmall",
-    "type": "error"
-  },
-  {
-    "inputs": [],
-    "name": "SpotMintTokenIdTooSmall",
-    "type": "error"
-  },
-  {
-    "inputs": [],
-    "name": "TokenAlreadyExists",
-    "type": "error"
-  },
-  {
-    "inputs": [],
-    "name": "TransferCallerNotOwnerNorApproved",
-    "type": "error"
-  },
-  {
-    "inputs": [],
-    "name": "TransferFromIncorrectOwner",
-    "type": "error"
-  },
-  {
-    "inputs": [],
-    "name": "TransferToNonERC721ReceiverImplementer",
-    "type": "error"
-  },
-  {
-    "inputs": [],
-    "name": "TransferToZeroAddress",
-    "type": "error"
-  },
-  {
-    "inputs": [],
-    "name": "URIQueryForNonexistentToken",
     "type": "error"
   },
   {
@@ -418,31 +185,32 @@ export const contractAbi = [
     "anonymous": false,
     "inputs": [
       {
-        "indexed": true,
+        "indexed": false,
         "internalType": "uint256",
-        "name": "fromTokenId",
+        "name": "_fromTokenId",
         "type": "uint256"
       },
       {
         "indexed": false,
         "internalType": "uint256",
-        "name": "toTokenId",
+        "name": "_toTokenId",
         "type": "uint256"
-      },
-      {
-        "indexed": true,
-        "internalType": "address",
-        "name": "from",
-        "type": "address"
-      },
-      {
-        "indexed": true,
-        "internalType": "address",
-        "name": "to",
-        "type": "address"
       }
     ],
-    "name": "ConsecutiveTransfer",
+    "name": "BatchMetadataUpdate",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "_tokenId",
+        "type": "uint256"
+      }
+    ],
+    "name": "MetadataUpdate",
     "type": "event"
   },
   {
@@ -493,6 +261,40 @@ export const contractAbi = [
     "inputs": [
       {
         "internalType": "address",
+        "name": "_buyer",
+        "type": "address"
+      },
+      {
+        "internalType": "string",
+        "name": "_tokenURI",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "_brand",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "_model",
+        "type": "string"
+      }
+    ],
+    "name": "MintMontres",
+    "outputs": [
+      {
+        "internalType": "uint16",
+        "name": "",
+        "type": "uint16"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
         "name": "to",
         "type": "address"
       },
@@ -504,7 +306,7 @@ export const contractAbi = [
     ],
     "name": "approve",
     "outputs": [],
-    "stateMutability": "payable",
+    "stateMutability": "nonpayable",
     "type": "function"
   },
   {
@@ -583,19 +385,6 @@ export const contractAbi = [
     "type": "function"
   },
   {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "_quantity",
-        "type": "uint256"
-      }
-    ],
-    "name": "mint",
-    "outputs": [],
-    "stateMutability": "payable",
-    "type": "function"
-  },
-  {
     "inputs": [],
     "name": "name",
     "outputs": [
@@ -667,7 +456,7 @@ export const contractAbi = [
     ],
     "name": "safeTransferFrom",
     "outputs": [],
-    "stateMutability": "payable",
+    "stateMutability": "nonpayable",
     "type": "function"
   },
   {
@@ -689,13 +478,13 @@ export const contractAbi = [
       },
       {
         "internalType": "bytes",
-        "name": "_data",
+        "name": "data",
         "type": "bytes"
       }
     ],
     "name": "safeTransferFrom",
     "outputs": [],
-    "stateMutability": "payable",
+    "stateMutability": "nonpayable",
     "type": "function"
   },
   {
@@ -712,19 +501,6 @@ export const contractAbi = [
       }
     ],
     "name": "setApprovalForAll",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "string",
-        "name": "_baseURI",
-        "type": "string"
-      }
-    ],
-    "name": "setBaseURI",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -762,10 +538,23 @@ export const contractAbi = [
     "type": "function"
   },
   {
+    "inputs": [],
+    "name": "tokenIds",
+    "outputs": [
+      {
+        "internalType": "uint16",
+        "name": "",
+        "type": "uint16"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
     "inputs": [
       {
         "internalType": "uint256",
-        "name": "_tokenId",
+        "name": "tokenId",
         "type": "uint256"
       }
     ],
@@ -775,19 +564,6 @@ export const contractAbi = [
         "internalType": "string",
         "name": "",
         "type": "string"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "totalSupply",
-    "outputs": [
-      {
-        "internalType": "uint256",
-        "name": "result",
-        "type": "uint256"
       }
     ],
     "stateMutability": "view",
@@ -813,7 +589,7 @@ export const contractAbi = [
     ],
     "name": "transferFrom",
     "outputs": [],
-    "stateMutability": "payable",
+    "stateMutability": "nonpayable",
     "type": "function"
   },
   {
@@ -830,4 +606,3 @@ export const contractAbi = [
     "type": "function"
   }
 ]
-
