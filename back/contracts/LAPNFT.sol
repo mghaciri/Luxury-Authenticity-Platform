@@ -1,12 +1,8 @@
 // SPDX-License-Identifier: MIT
 pragma solidity 0.8.20;
 
-//import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
-//import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
-//import "erc721a/contracts/ERC721A.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
-//import "@openzeppelin/contracts/utils/Counters.sol";
 
 contract LAPNFT is ERC721URIStorage, Ownable {
     uint16 public tokenIds;
@@ -31,8 +27,18 @@ contract LAPNFT is ERC721URIStorage, Ownable {
 
 		Montres[] montres;
 
+    /// @notice Events
+    event mintMontre(uint16 newItemId, address buyer, string tokenURI, string brand, string model); 
+
+
     constructor() ERC721 ("LapNFT", "LAP") Ownable(msg.sender) {}
 
+    /** 
+    @notice Function to mint a new NFT
+    @dev mint a new NFT from watch characteristics
+    * emit a mintMontre event
+    * return the new Token ID
+    */
     function MintMontres(address _buyer, string memory _tokenURI, string memory _brand, string memory _model) public returns (uint16)
     {
         tokenIds++;
@@ -41,6 +47,8 @@ contract LAPNFT is ERC721URIStorage, Ownable {
         uint16 newItemId = tokenIds;
         _mint(_buyer, newItemId);
         _setTokenURI(newItemId, _tokenURI);
+
+        emit mintMontre(newItemId, _buyer, _tokenURI,_brand,_model);
 
         return uint16(newItemId);
     }
