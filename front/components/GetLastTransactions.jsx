@@ -22,8 +22,8 @@ export default function GetLastTransactions() {
         event: parseAbiItem('event Transfer(address indexed, address indexed, uint256)'),
         fromBlock: BigInt(process.env.NEXT_PUBLIC_EVENT_BLOCK_NUMBER),
 //        fromBlock: 6290859n,
-        toBlock: 6295028n
-//        toBlock: 'latest'
+//        toBlock: 6295028n
+        toBlock: 'latest'
       })
       setEvents(logs);
      }

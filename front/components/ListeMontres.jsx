@@ -1,4 +1,8 @@
-import { Button } from "flowbite-react"
+"use client";
+import { useEffect, useState } from "react";
+import { Alert, Button } from "flowbite-react";
+import { useAccount, useReadContract, useWriteContract } from "wagmi";
+import { contractAddress, contractAbi, ownerAddress } from "@/constants";
 
 const products = [
     {
@@ -38,20 +42,50 @@ const products = [
         year: "2024"
     },
   ]
-  
-const handleBuy = (id) => {
-    alert(id);      
-}
 
-  export default function ListeMontres() {
+
+
+export default function ListeMontres() {
+    const { address } = useAccount();
+    const { writeContract } = useWriteContract();
+
+    const [toAddress, setToAddress] = useState("");
+    const [confirmation, setConfirmation] = useState(""); 
+    const [showAlert, setShowAlert] = useState(false);
+
+
+    const safeTransferFrom = async (id) => {
+      try {
+          writeContract({
+              address: contractAddress,
+              abi: contractAbi,
+              functionName: "safeTransferFrom",
+              args: [address, toAddress, id],
+          });
+
+      } catch (error) {
+          console.error("Error Transfer:", error);
+          setShowAlert(true);
+          setConfirmation("Error Transfer");
+      }
+      setShowAlert(false);
+      setConfirmation("Transfer successfully");
+    };
+  
+
+    const handleTransfer = (id) => {
+      if(toAddress == "") alert("Adresse vide !")
+      safeTransferFrom(id);      
+    }
+    
     return (
-      <div className="bg-white">
+      <div className="text-white justify-center items-center w-full bg-blue-950">
         <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
   
           <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
             {products.map((product) => (
               <div key={product.id} className="group relative">
-                <h3 className="text-sm text-gray-700 text-center">
+                <h3 className="text-sm text-center">
                     {product.owner.substring(0,10)}...
                 </h3>
 
@@ -64,23 +98,32 @@ const handleBuy = (id) => {
                 </div>
                 <div className="mt-4 flex justify-between">
                   <div>
-                    <h3 className="text-sm text-gray-700">
+                    <h3 className="text-sm">
                       <a>
                         <span aria-hidden="true" className="absolute inset-0" />
                         {product.name}
                       </a>
                     </h3>
-                    <p className="mt-1 text-sm text-gray-500">{product.year}</p>
+                    <p className="mt-1 text-sm">{product.year}</p>
                   </div>
                 </div>
-                <div className="mt-1 text-sm text-gray-500">
+                <div className="mt-1 text-sm">
                   {product.price}
-                  <Button onClick={() => handleBuy(product.id)}>Transfer</Button>
+                  <Button onClick={() => handleTransfer(product.id)}>Transfer</Button>
                 </div>
               </div>
             ))}
           </div>
         </div>
+        <section className="flex justify-center items-center w-full bg-blue-950">
+          <input
+              type="string"
+              value={toAddress}
+              onChange={(e) => setToAddress(e.target.value)}
+              className="input input-bordered input-primary w-full max-w-xs text-black items-center"
+              placeholder="Enter destination address"
+            />
+        </section>
       </div>
     )
   }

@@ -16,7 +16,7 @@ export default function TestContract() {
       
     return (
         <div className="flex flex-col justify-around items-center pb-6 w-full bg-[#0a1835] h-[10vh]">
-            <div>Adress du contrat : {contractAddress} </div>
+            <div>Adresse du contrat : {contractAddress} </div>
             <div>Owner Contract : {data?.toString()}</div>
             <div>User Metamask connecté : {address}</div>
         </div>

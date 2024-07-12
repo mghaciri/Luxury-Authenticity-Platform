@@ -1,3 +1,5 @@
+export const ownerAddress = "0xd038D8716C28A0598D14F74d14b15113Aa492adF";
+
 export const contractAddress = "0x5645B38D17433474c6311348F8561429c2377993"; 
 
 export const contractAbi = [
