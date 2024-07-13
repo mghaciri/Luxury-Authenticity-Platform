@@ -30,7 +30,7 @@ export default function GetLastTransactions() {
     getInfos();
   }, [])
 
-  console.log(events);
+  
 
 	// formatEther() permet de convertir de WEI en Ether
  return (

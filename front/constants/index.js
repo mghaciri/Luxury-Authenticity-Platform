@@ -1,6 +1,6 @@
 export const ownerAddress = "0xd038D8716C28A0598D14F74d14b15113Aa492adF";
 
-export const contractAddress = "0x5645B38D17433474c6311348F8561429c2377993"; 
+export const contractAddress = "0xF4552E7a4883D3F2673f5158b6E3b5b376D24C64"; 
 
 export const contractAbi = [
   {
@@ -219,6 +219,43 @@ export const contractAbi = [
     "anonymous": false,
     "inputs": [
       {
+        "indexed": false,
+        "internalType": "uint16",
+        "name": "newItemId",
+        "type": "uint16"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "buyer",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "tokenURI",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "brand",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "model",
+        "type": "string"
+      }
+    ],
+    "name": "MintMontre",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
         "indexed": true,
         "internalType": "address",
         "name": "previousOwner",
@@ -232,6 +269,19 @@ export const contractAbi = [
       }
     ],
     "name": "OwnershipTransferred",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "sellerAddress",
+        "type": "address"
+      }
+    ],
+    "name": "SellerRegistered",
     "type": "event"
   },
   {
@@ -263,33 +313,12 @@ export const contractAbi = [
     "inputs": [
       {
         "internalType": "address",
-        "name": "_buyer",
+        "name": "_addr",
         "type": "address"
-      },
-      {
-        "internalType": "string",
-        "name": "_tokenURI",
-        "type": "string"
-      },
-      {
-        "internalType": "string",
-        "name": "_brand",
-        "type": "string"
-      },
-      {
-        "internalType": "string",
-        "name": "_model",
-        "type": "string"
       }
     ],
-    "name": "MintMontres",
-    "outputs": [
-      {
-        "internalType": "uint16",
-        "name": "",
-        "type": "uint16"
-      }
-    ],
+    "name": "addSeller",
+    "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
   },
@@ -366,6 +395,42 @@ export const contractAbi = [
     "inputs": [
       {
         "internalType": "address",
+        "name": "_addr",
+        "type": "address"
+      }
+    ],
+    "name": "getSeller",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "bool",
+            "name": "isRegistered",
+            "type": "bool"
+          },
+          {
+            "internalType": "string",
+            "name": "name",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "postalAddress",
+            "type": "string"
+          }
+        ],
+        "internalType": "struct LAPNFT.Seller",
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
         "name": "owner",
         "type": "address"
       },
@@ -384,6 +449,40 @@ export const contractAbi = [
       }
     ],
     "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_buyer",
+        "type": "address"
+      },
+      {
+        "internalType": "string",
+        "name": "_tokenURI",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "_brand",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "_model",
+        "type": "string"
+      }
+    ],
+    "name": "mintMontres",
+    "outputs": [
+      {
+        "internalType": "uint16",
+        "name": "",
+        "type": "uint16"
+      }
+    ],
+    "stateMutability": "nonpayable",
     "type": "function"
   },
   {

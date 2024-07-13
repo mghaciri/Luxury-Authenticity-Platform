@@ -54,6 +54,9 @@ const WhiteListRegistration = () => {
     addVoter();
   };
 
+  console.log("address:",address);
+  console.log("ownerAddress:",ownerAddress);
+  
   // Check if the current user is the owner
   const isOwner = address === ownerAddress;
 
@@ -75,6 +78,7 @@ const WhiteListRegistration = () => {
     );
   }
 
+
   return (
     <section className="flex justify-center items-center w-full bg-blue-950 h-[20vh]">
       <div className="">
@@ -91,13 +95,13 @@ const WhiteListRegistration = () => {
             placeholder="Enter an Address"
           />
 
-          <Button
+          {isOwner && <Button
             gradientMonochrome="purple"
             onClick={handleRegister}
             className="ml-4"
-          >
+            >
             Add an address to whitelist
-          </Button>
+          </Button>}
         </div>
         <div className="mt-4 w-80">
           {showAlert && (

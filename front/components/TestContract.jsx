@@ -1,5 +1,5 @@
 "use client";
-import { contractAddress, contractAbi } from "@/constants";
+import { contractAddress, contractAbi, ownerAddress } from "@/constants";
 import { useReadContract, useAccount } from "wagmi";
 
 

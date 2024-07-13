@@ -11,7 +11,6 @@ import { contractAddress, contractAbi, ownerAddress } from "@/constants";
 const MintMontre = () => {
 
     const [confirmation, setConfirmation] = useState(""); 
-    const [registeredAddresses, setRegisteredAddresses] = useState([]);
     const [showAlert, setShowAlert] = useState(false);
     const [tokenURI, setTokenURI] = useState("");
 
@@ -20,11 +19,6 @@ const MintMontre = () => {
 
     const [tokenAddress, setTokenAddress] = useState(address);
 
-
-    // MetaMask
-    //const ownerAddress = "0xd038D8716C28A0598D14F74d14b15113Aa492adF";
-    // Hardhat
-    //const ownerAddress = "0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266";
 
     const mintNFT = async () => {
         try {
@@ -59,12 +53,43 @@ const MintMontre = () => {
         mintNFT();
     };
 
+  // Check if the current user is the owner
+  const isOwner = address === ownerAddress;
 
+  if (!isOwner) {
+    return (
+      <>
+        <div className="flex flex-col text-orange-700 h-80 text-center items-center bg-blue-950">
+          <h2 className="text-orange-700 text-center text-4xl mt-10">
+
+          </h2>
+          <p className="text-orange-700 text-center text-2xl mt-4 mb-6">
+          </p>
+          <ConnectButton
+            label="Admin"
+            className="text-center mt-4"
+          />
+        </div>
+      </>
+    );
+  }
 
   return (
-    <section className="flex justify-center items-center w-full bg-blue-950 h-[20vh]">
+    <section className="flex justify-center items-center w-full bg-blue-900 h-[20vh]">
       <div>
-        <div className="flex">
+        <h3 className="text-white xl:text-3xl lg:text-3xl text-xl font-semibold mb-6 leading-loose">
+          (Only for Admin)
+        </h3>
+
+        <div className="flex ">
+
+        <input
+            type="string"
+            value={ownerAddress}
+            onChange={(e) => setOwnerAddress(e.target.value)}
+            className="input input-bordered input-primary w-full max-w-xs text-black"
+            placeholder="Enter Owner Adress"
+          />
 
           <input
             type="string"
