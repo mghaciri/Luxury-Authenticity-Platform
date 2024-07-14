@@ -129,6 +129,9 @@ function Montre(product) {
             className="input input-bordered input-primary w-full max-w-xs text-black items-center"
             placeholder="Enter destination address"
             />
+            <div className="mt-1 text-sm">
+                <Button onClick={() => handleTransfer(product.id)}>Transfer</Button>
+            </div>
           </section>
         }
         <div className="mt-4 w-80">
