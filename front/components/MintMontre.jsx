@@ -18,9 +18,10 @@ const MintMontre = () => {
     const { address } = useAccount();
 
     const [tokenAddress, setTokenAddress] = useState(address);
-
+    
 
     const mintNFT = async () => {
+      console.log(tokenAddress);
         try {
             writeContract({
                 address: contractAddress,
@@ -47,7 +48,6 @@ const MintMontre = () => {
         }
     };
     
-
     
     const handleMint = () => {
         mintNFT();
@@ -63,8 +63,6 @@ const MintMontre = () => {
           <h2 className="text-orange-700 text-center text-4xl mt-10">
 
           </h2>
-          <p className="text-orange-700 text-center text-2xl mt-4 mb-6">
-          </p>
           <ConnectButton
             label="Admin"
             className="text-center mt-4"
@@ -83,13 +81,6 @@ const MintMontre = () => {
 
         <div className="flex ">
 
-        <input
-            type="string"
-            value={ownerAddress}
-            onChange={(e) => setOwnerAddress(e.target.value)}
-            className="input input-bordered input-primary w-full max-w-xs text-black"
-            placeholder="Enter Owner Adress"
-          />
 
           <input
             type="string"
@@ -113,8 +104,6 @@ const MintMontre = () => {
           )}
           {confirmation && <div>{confirmation}</div>}
         </div>
-
-       
       </div>
     </section>
   );

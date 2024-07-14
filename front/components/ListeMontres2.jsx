@@ -23,6 +23,7 @@ function ListeMontres2() {
                   <Montre id="1"/>
                   <Montre id="2"/>
                   <Montre id="3"/>
+                  <Montre id="4"/>
                 </div>
               </div>
           </div>

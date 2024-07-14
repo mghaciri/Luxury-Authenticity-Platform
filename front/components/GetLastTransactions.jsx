@@ -14,7 +14,6 @@ export default function GetLastTransactions() {
   const [events, setEvents] = useState([]);
   
   useEffect(() => {
-    console.log(contractAddress);
     const getInfos = async() => {
       const logs = await publicClient.getLogs({
         address: contractAddress,
@@ -30,22 +29,20 @@ export default function GetLastTransactions() {
     getInfos();
   }, [])
 
-  
 
 	// formatEther() permet de convertir de WEI en Ether
  return (
-    <p className="justify-center items-center p-8 bg-blue-950">
+    <div className="justify-center items-center p-8 bg-blue-950">
       <div className="text-center text-2xl font-bold mt-4">Dernières transactions </div>
 
       {events.length > 0 && events.map((event) => {
         return (
-          <p key={crypto.randomUUID()}>
-            { event.eventName } - From : {event.args[0]} - To : {formatEther(event.args[1])} 
-            
-          </p>
+          <div key={crypto.randomUUID()}>
+            { event.eventName } - From : {event.args[0]} - To : {event.args[1]}
+          </div>
         )
       })}
-    </p>
+    </div>
   );
 
 

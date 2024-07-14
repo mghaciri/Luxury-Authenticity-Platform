@@ -18,8 +18,6 @@ function TokenURI() {
           <span className='text-2xl font-bold'>[ {data?.toString()} ]</span>
       </div>
     </div>
-
-    
   );
 };
 

@@ -104,7 +104,7 @@ export default function ListeMontres() {
                         {product.name}
                       </a>
                     </h3>
-                    <p className="mt-1 text-sm">{product.year}</p>
+                    <div className="mt-1 text-sm">{product.year}</div>
                   </div>
                 </div>
                 <div className="mt-1 text-sm">
